@@ -11,7 +11,9 @@ use app\model\Product;
 $products = Product::findAll();
 
 ?>
-
+<?php if (isset($_GET['create']) && $_GET['create'] == "error") : ?>
+    <div class="alert alert-warning">Valami hiba történt a poszt létrehozása során! :(</br>Ügyelj, hogy minden mező ki legyen töltve</div>
+<?php endif; ?>
 <div class="create-form p-3 my-3">
     <h2>Poszt létrehozása</h2>
     <form action="index.php?controller=post&action=create" method="POST">

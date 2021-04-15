@@ -21,7 +21,7 @@ use app\model\User;
 ?>
 
 <?php if (isset($_GET['register']) && $_GET['register'] == "error") : ?>
-    <div class="alert alert-warning">Valami hiba történt a regisztráció során, valószínűleg az e-mail cím már foglalt! :(</div>
+    <div class="alert alert-warning">Valami hiba történt a regisztráció során! </br>Lehet, hogy az e-mail cím már foglalt! :(</br>Ügyelj, hogy minden mező ki legyen töltve</div>
 <?php endif; ?>
 
 <div class="register-form p-3 my-3">

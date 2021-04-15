@@ -51,6 +51,8 @@ class OfferController extends CommonController
                 header("Location: index.php?controller=offer&action=index&create=success");
                 exit();
             }
+            header("Location: index.php?controller=offer&action=create&create=error");
+            exit();
         }
         return $this->render('create', [
             'offer' => $offer

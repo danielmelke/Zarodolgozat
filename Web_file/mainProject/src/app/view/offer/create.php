@@ -10,7 +10,9 @@ use app\model\Offer;
 use app\model\User;
 
 ?>
-
+<?php if (isset($_GET['create']) && $_GET['create'] == "error") : ?>
+    <div class="alert alert-warning">Valami hiba történt a hirdetés létrehozása során! :(</br>Ügyelj, hogy minden mező ki legyen töltve</div>
+<?php endif; ?>
 <div class="create-form p-3 my-3">
     <h2>Hírdetés létrehozása</h2>
     <form enctype="multipart/form-data" action="index.php?controller=offer&action=create" method="POST">

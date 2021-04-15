@@ -77,7 +77,9 @@ class PostController extends CommonController{
             if ($post->create()) {
                 header("Location: index.php?controller=post&action=index&create=success");
                 exit();
-            }    
+            }
+            header("Location: index.php?controller=post&action=create&create=error");
+            exit();
         }
 
         return $this->render('create', [

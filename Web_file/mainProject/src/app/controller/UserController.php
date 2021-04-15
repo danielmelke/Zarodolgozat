@@ -29,11 +29,13 @@ class UserController extends CommonController{
                 header("Location: index.php?controller=user&action=index&login=success");
                 exit();
             }
+            header("Location: index.php?controller=user&action=login&login=error");
+            exit();
         }
 
         $this->title = "Bejelentkezés";
         return $this->render("login", [
-            'user' => $user
+            "user" => $user
         ]);
     }
 

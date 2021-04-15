@@ -6,12 +6,12 @@
 use app\model\User;
 require_once('src/app/model/User.php');
 
-if (isset($_SESSION['user_id'])) {
-    $user = User::findOneByUserId($_SESSION['user_id']);
-}
-else {
-    $user = new User();
-}
+// if (isset($_SESSION['user_id'])) {
+//     $user = User::findOneByUserId($_SESSION['user_id']);
+// }
+// else {
+//     $user = new User();
+// }
 
 
 ?>
@@ -22,6 +22,17 @@ else {
             <div class="col-12">
                 <div class="alert alert-success my-3">
                     Sikeres regisztráció! Most már be tud jelentkezni!
+                </div>
+            </div>
+          </div>  
+    <?php endif; ?>
+<?php endif; ?>
+<?php if (isset($_GET['login'])) : ?>
+    <?php if ($_GET['login'] == "error") : ?>
+          <div class="row">
+            <div class="col-12">
+                <div class="alert alert-warning my-3">
+                    Valami hiba történt a bejelentkezés során! :(
                 </div>
             </div>
           </div>  
